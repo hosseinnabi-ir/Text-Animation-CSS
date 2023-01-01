@@ -1,0 +1,134 @@
+:root {
+    --primary-color: #ff2483;
+    --secondary-color: #ff65bd;
+    --text-color: #ffe6ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #141114;
+    background-size: 58px 58px;
+    background-image: 
+        linear-gradient(
+            335deg, #000 23px, transparent 23px
+        ), 
+        linear-gradient(
+            155deg, #000 23px, transparent 23px
+        ), 
+        linear-gradient(
+            335deg, #000 23px, transparent 23px
+        ), 
+        linear-gradient(
+            155deg, #000 23px, transparent 23px
+        );
+        background-position: 
+            0px 2px,
+            4px 35px,
+            29px 31px,
+            34px 6px;
+}
+
+.message {
+    display: flex;
+    color: var(--text-color);
+    letter-spacing: 5px;
+    font: 8rem 'Sevillana';
+    text-shadow: 
+        0 0 10px var(--text-color),
+        0 0 24px var(--secondary-color),
+        0 -100px 32px var(--primary-color),
+        0 8px 48px var(--primary-color);
+    animation: shine 1s forwards, flick 2.5s infinite;
+}
+
+@keyframes shine {
+
+    0% {
+        color: #6b1839;
+        text-shadow: none;
+    }
+
+    100% {
+        color: var(--text-color);
+        text-shadow: 
+            0 0 10px var(--text-color),
+            0 0 24px var(--secondary-color),
+            0 -8px 32px var(--primary-color),
+            0 8px 48px var(--primary-color);
+    }
+
+}
+
+@keyframes flick {
+
+    0%, 20%, 30%, 40%, 50%, 100% {
+        opacity: 1;
+    }
+
+    8%, 78%, 88% {
+        opacity: .8;
+    }
+
+    10%, 60%, 70% {
+        opacity: .9;
+    }
+
+    18%, 28%, 38%, 48%, 58%, 68%, 80%, 90% {
+        opacity: .95;
+    }
+
+}
+
+.message .word {
+    margin: 0 20px;
+    animation: blink 10s .2s infinite;
+}
+
+.message .word:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.message .word:nth-child(3) {
+    animation-delay: 8s;
+}
+
+@keyframes blink {
+
+    0%, 28%, 32%, 58%, 62%, 100% {
+        color: var(--text-color);
+        text-shadow: 
+            0 0 10px var(--text-color),
+            0 0 24px var(--secondary-color),
+            0 -8px 32px var(--primary-color),
+            0 8px 48px var(--primary-color);
+    }
+
+    30% {
+        text-shadow: none;
+        color: var(--secondary-color);
+    }
+
+    60% {
+        text-shadow: none;
+        color: var(--primary-color);
+    }
+
+}
+
+.bg-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
